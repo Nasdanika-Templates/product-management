@@ -1,0 +1,13 @@
+---
+eClass: "https://product-management.models.nasdanika.org#//Capability"
+id: "automated-data-aggregation"
+icon: "fas fa-wrench"
+documentation: "Provides access to automated data aggregation tools"
+name: "Automated Data Aggregation"
+addresses:
+- eClass: "https://product-management.models.nasdanika.org#//ConcernReference"
+  docRef: "automated-data-aggregation.md"
+  target:
+    eClass: "https://product-management.models.nasdanika.org#//Need"
+    $ref: "external-persona.yaml#//@concerns[id='automated-data-aggregation']"
+lifecycle: "In Progress"

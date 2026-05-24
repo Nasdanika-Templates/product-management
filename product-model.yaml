@@ -1,0 +1,20 @@
+---
+eClass: "https://product-management.models.nasdanika.org#//ProductModel"
+documentation: "Sample documentation"
+name: "Sample product model"
+personas:
+- eClass: "https://product-management.models.nasdanika.org#//Persona"
+  id: "sample-persona"
+  documentation: "Sample persona documentation"
+  name: "Sample persona"
+- eClass: "https://product-management.models.nasdanika.org#//PersonaReference"
+  id: "external-persona-ref"
+  target:
+    eClass: "https://product-management.models.nasdanika.org#//Persona"
+    $ref: "external-persona.yaml#/"
+capabilities:
+- eClass: "https://product-management.models.nasdanika.org#//CapabilityReference"
+  id: "automated-data-aggregation-ref"
+  target:
+    eClass: "https://product-management.models.nasdanika.org#//Capability"
+    $ref: "automated-data-aggregation.yaml#/"

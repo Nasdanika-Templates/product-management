@@ -1,0 +1,31 @@
+---
+eClass: "https://product-management.models.nasdanika.org#//Persona"
+id: "external-persona"
+documentation: "External persona documentation"
+name: "External persona"
+concerns:
+- eClass: "https://product-management.models.nasdanika.org#//Goal"
+  id: "reduce-manual-reporting"
+  documentation: "Explains the goal in more detail"
+  name: "Reduce time spent on manual reporting"
+- eClass: "https://product-management.models.nasdanika.org#//Need"
+  id: "automated-data-aggregation"
+  documentation: "Explains the need in more detail"
+  name: "Access to automated data aggregation tools"
+  supports:
+  - documentation: "Expolins how it supports the goal"
+    target:
+      eClass: "https://product-management.models.nasdanika.org#//Goal"
+      $ref: "//@concerns[id='reduce-manual-reporting']"
+- eClass: "https://product-management.models.nasdanika.org#//PainPoint"
+  id: "siloed-data-systems"
+  documentation: "Explains the pain point in more detail"
+  name: "Data is siloed across incompatible systems"
+  blocks:
+  - target:
+      eClass: "https://product-management.models.nasdanika.org#//Goal"
+      $ref: "//@concerns[id='reduce-manual-reporting']"
+  violates:
+  - target:
+      eClass: "https://product-management.models.nasdanika.org#//Need"
+      $ref: "//@concerns[id='automated-data-aggregation']"
