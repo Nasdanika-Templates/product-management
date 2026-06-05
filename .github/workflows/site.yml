@@ -40,7 +40,7 @@ jobs:
         working-directory: nsd-cli
         run: |
           chmod u+x nsd
-          ./nsd model ../product-model.yaml html-app -r ../root-action.yml --add-to-root site -r=-1 -F ../page-template.yml ../docs
+          ./nsd model ../legacy-modernization.pm.md html-app -r ../root-action.yml --add-to-root site -r=-1 -F ../page-template.yml ../docs
           ls ../docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
