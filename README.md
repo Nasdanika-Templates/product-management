@@ -2,7 +2,7 @@
 
 A starter template for authoring your own [Nasdanika product management model](https://product-management.models.nasdanika.org/). 
 Create a repository from this repository as a template, enable GitHub pages with GitHub actions.
-Edit YAML, push - a GitHub Action publishes the rendered documentation site to GitHub Pages for free.
+Edit legacy-modernization.pm.md, push - a GitHub Action publishes the rendered documentation site to GitHub Pages for free.
 
 **Example output:** https://nasdanika-templates.github.io/product-management/
 
@@ -10,7 +10,7 @@ Edit YAML, push - a GitHub Action publishes the rendered documentation site to G
 
 When you instantiate this template you get:
 
-- YAML files for personas, concerns, capabilities, and providers - the structure the metamodel expects
+- A markdown files with personas, concerns, capabilities, and providers - the structure the metamodel expects
 - A GitHub Actions workflow that builds your model into a documentation site
 - Automatic publishing of that site to GitHub Pages on every push to `main`
 
@@ -18,7 +18,7 @@ When you instantiate this template you get:
 
 1. **Use this template** to create your own repository (the green *Use this template* button at the top of the GitHub UI).
 2. **Enable GitHub Pages** in your new repository's *Settings ? Pages*, with the source set to *"GitHub Actions"*.
-3. **Edit the YAML files** to describe your own personas, concerns, capabilities, and providers. The examples in the template are illustrative - replace them with your own.
+3. **Edit the legacy-modernization.pm.md file** to describe your own personas, concerns, capabilities, and providers. You can rename the file from  `legacy-modernization.pm.md` to the name of your product model, just keep `.pm.md` at the end. If you rename the file, also edit `.github\workflows\site.yml` file to reflect the change.
 4. **Push to `main`.** The workflow runs, builds the site, publishes to `https://<your-org>.github.io/<your-repo>/`.
 
 ## How the build works
@@ -26,9 +26,8 @@ When you instantiate this template you get:
 The GitHub Actions workflow invokes the Nasdanika CLI's [`model/html-app/site`](https://docs.nasdanika.org/nsd-cli/nsd/model/html-app/site/index.html) command pipeline.
 The pipeline:
 
-1. Loads your YAML model files
-2. Resolves references 
-3. Renders the resulting graph as an interactive documentation site
+1. Loads your markdown file and maps to the product management model
+3. Renders the resulting model as an interactive documentation site
 4. Publishes the result to the GitHub Pages
 
 The CLI is open source. The pipeline is deterministic. The site is the output; the model is the source.
